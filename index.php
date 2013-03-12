@@ -20,6 +20,7 @@ EOD;
 
 
 ?>
+<!DOCTYPE html>
 <html>
 <head>
 <title>Proxifier bookmarklet</title>
@@ -28,21 +29,41 @@ EOD;
 var bookmarklet = "<?php echo proxifier(); ?>";
 </script>
 <script src="proxifier.js"></script>
+<style>
+.bookmarklet {
+  border: 3px solid #005000;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #ccffcc;
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+}
+.bookmarklet:hover {
+  background-color: #ddffcc;
+}
+.marg {
+  display: block;
+  margin-top: 20px;
+}
+</style>
 </head>
 <body>
 
-<p>Uppsala university has a proxy that lets you access journals they
-subscribe to by appending <tt>.ezproxy.its.uu.se</tt> to the host part of the
-URL (and then log in). I bet there are lots of similar services. I
-wrote a little bookmarklet to add such proxy URL endings with a single
-click.</p>
+<p>My university has a proxy that lets you access journals they
+subscribe to by appending <tt>.ezproxy.its.uu.se</tt> to the host part
+of the URL (and then log in). I bet there are lots of similar
+services. I wrote a little bookmarklet to add such proxy endings to
+URLs with a single click. (<a
+href="https://github.com/skagedal/proxifier">Code at Github.</a>)</p>
 
 <p>URL to append (including initial dot): 
 <input type="text" id="proxy"></input>
 <button id="create">Create bookmarklet</button>
 </p>
 
-<p id="bookmarklets"></p>
+<div id="bookmarklets"></div>
 <!-- <a href="<?php echo proxifier(); ?>">Proxify</a> -->
 
 <p id="info">(Bookmark above link, go to the page whose URL you want to modify,
